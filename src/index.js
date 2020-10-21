@@ -16,6 +16,7 @@ app.use(express.json());
 
 //Routes
 app.use('/api/tasks', require('./routes/task'));
+app.use('/api/cars', require('./routes/cars'));
 //Static files
 app.use(express.static(__dirname+'/public'));
 //Server is listening
