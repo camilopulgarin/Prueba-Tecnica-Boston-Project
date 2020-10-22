@@ -1,10 +1,13 @@
 import Vue from 'vue';
-import App from './components/App.vue'
+import router from './router';
+import App from './components/App.vue';
+import componente from './components/component.vue';
+import home from './components/Home.vue';
 
-import VueRouter from 'vue-router';
 
-Vue.use(VueRouter);
-
+Vue.component('app-componente', componente);
 new Vue({
-    render: h => h(App)
+    router,
+    render: h => h(home)
 }).$mount('#app');
+

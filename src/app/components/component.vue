@@ -5,30 +5,7 @@
     <div class="container">
         <div class="row pt-5">
             <div class="col-md-6">
-                <div class="card">
-                    <h3 class="card-header bg-primary mb-3 text-white" >Drivers</h3>
-                    <div class="card-body">
-                        <form @submit.prevent="addTask">
-                            <div class="form-group">
-                            <input type="text" v-model="task.title"
-                            placeholder="Insert a Name" 
-                            class="form-control">
-                            </div >
-                            <div class="form-group">
-                                <input type="text" v-model="task.description"
-                                class="form-control" placeholder="Insert A Date">
-                            </div>
-                            <template v-if="edit === false">
-                                <button class="btn btn-primary btn-block"
-                                >Send</button>
-                            </template>
-                            <template v-else>
-                                <button class="btn btn-primary btn-block">
-                                    Update</button>
-                            </template>
-                        </form>
-                    </div>
-                </div>
+                
             </div>
             <div class="col-md-6">
                 <div class="card">
@@ -72,16 +49,7 @@
                         <tr v-for="task of tasks">
                             <td>{{task.title}}</td>
                             <td>{{task.description}}</td>
-                            <td>
-                                <button @click="deleteTask(task._id)"
-                                class="btn btn-danger">
-                                    Delete
-                                </button>
-                                <button @click="editTask(task._id)"
-                                class="btn btn-secondary">
-                                    Edit
-                                </button>
-                            </td>
+                            
 
                         </tr>
                     </tbody>
@@ -160,7 +128,6 @@ export default {
     },
     
     methods: {
-        //methods Drivers
         addTask(){
             if(this.edit === false){
                 fetch('/api/tasks', {
